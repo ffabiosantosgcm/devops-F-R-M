@@ -1,10 +1,6 @@
 name: devops-pipeline-F-R-M
 
 on:
-  push:
-    branches: [ main ]
-	
-on:
   workflow_dispatch:
 
 jobs:
@@ -31,4 +27,4 @@ jobs:
       with:
         name: deploy AWS s3
         path: README2.md
-    - run: aws s3 cp README2.md s3://devops-frm --recursive --acl public-read 
+    - run: aws s3 cp README2.md s3://devops-frm --recursive --acl public-read
