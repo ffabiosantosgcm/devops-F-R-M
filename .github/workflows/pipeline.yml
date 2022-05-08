@@ -5,18 +5,23 @@ on:
     branches: [ main ]
 
 jobs:
-  job1:
-    build:
-      runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout@v2   
-      - uses: actions/upload-artifact@v2
-        with:
-         name: deploy
-         path: README.md
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2   
+    - uses: actions/upload-artifact@v2
+      with:
+        name: deploy AWS s3
+        path: README.md
         
+    job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step do job2
+        run: echo Hello, world! Job2.
+
   deploy:
-    if: "contains(github.event.head_commit.message, '[deploy]')"
+    
     runs-on: ubuntu-latest
     needs: build
     env:
@@ -27,6 +32,6 @@ jobs:
     steps:
     - uses: actions/download-artifact@v2
       with:
-        name: deploy AWS S3
-        path: README.md
-    - run: aws s3 cp README.md s3://devops-frm --recursive --acl public-read
+        name: deploy AWS s3
+        path: README2.md
+    - run: aws s3 cp README2.md s3://devops-frm --recursive --acl public-read 
