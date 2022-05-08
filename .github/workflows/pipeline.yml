@@ -8,5 +8,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:            
-      - name: executa comando
-        run: echo "Configuração inicial do pipeline"
+      - name: testa ping
+        run: ansible-playbook -vvvv ansible/ping.yml
