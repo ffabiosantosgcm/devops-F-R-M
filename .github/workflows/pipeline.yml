@@ -3,6 +3,9 @@ name: devops-pipeline-F-R-M
 on:
   push:
     branches: [ main ]
+	
+on:
+  workflow_dispatch:
 
 jobs:
   build:
