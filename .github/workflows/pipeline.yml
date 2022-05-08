@@ -5,8 +5,15 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  job1:
     runs-on: ubuntu-latest
-    steps:            
-      - name: testa ping
-        run: ansible-playbook -vvvv ansible/ping.yml
+    steps:
+      - name: step do job1
+        run: echo Hello, world! job1.
+
+
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step do job2
+        run: echo Hello, world! Job2.
