@@ -1,31 +1,19 @@
-name: devops-pipeline-F-R-M
-
-on:
-  push:
-    branches: [ main ]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2   
-    - uses: actions/upload-artifact@v2
-      with:
-        name: deploy AWS s3
-        path: README.md
-
-  deploy:
-    
-    runs-on: ubuntu-latest
-    needs: build
-    env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
-      AWS_EC2_METADATA_DISABLED: true
-    steps:
-    - uses: actions/download-artifact@v2
-      with:
-        name: deploy AWS s3
-        path: README2.md
-    - run: aws s3 cp README2.md s3://devops-frm --recursive --acl public-read
+deploy-dev:
+   runs-on: ubuntu-latest
+   environment:
+    name: dev
+    url: 'https://www.pucminas.br/destaques/Paginas/default.aspx'
+   needs: build 
+   steps:
+    - name: Run a one-line script
+      run: echo Deploy Dev
+  
+deploy-prod:
+   runs-on: ubuntu-latest
+   environment: 
+     name: prod
+     url: 'https://www.pucminas.br/destaques/Paginas/default.aspx'
+   needs: deploy-dev
+   steps:
+    - name: Run a one-line script
+      run: echo Deploy Prod
