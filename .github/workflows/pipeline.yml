@@ -39,9 +39,8 @@ jobs:
    steps:
     - name: Run a one-line script
       run: echo Deploy Prod
-	
+
   deploy:
-    
     runs-on: ubuntu-latest
     needs: build1
     env:
