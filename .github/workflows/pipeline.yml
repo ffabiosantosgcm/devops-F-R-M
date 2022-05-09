@@ -53,5 +53,5 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         name: deploy AWS s3
-        path: README4.md
+        path: README2.md
     - run: aws s3 cp README2.md s3://devops-frm --recursive --acl public-read
