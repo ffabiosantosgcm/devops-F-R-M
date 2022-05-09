@@ -1,4 +1,16 @@
-deploy-dev:
+name: devops-pipeline-F-R-M
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:            
+      - name: executa comando
+        run: echo "Configuração inicial do pipeline" 
+  deploy-dev:
    runs-on: ubuntu-latest
    environment:
     name: dev
@@ -8,7 +20,7 @@ deploy-dev:
     - name: Run a one-line script
       run: echo Deploy Dev
   
-deploy-prod:
+  deploy-prod:
    runs-on: ubuntu-latest
    environment: 
      name: prod
