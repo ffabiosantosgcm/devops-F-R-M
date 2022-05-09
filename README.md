@@ -32,3 +32,4 @@ Links para o ambiente do [Sonar Cloud](https://sonarcloud.io/project/configurati
 
 9. O deploy em produção deverá ser configurado para ser feito apenas com aprovação manual. A implementação pode ser feita por meio do mecanismo ‘environment’ do GitHub.
 ```
+![diagrama](https://user-images.githubusercontent.com/pipeline.PNG)
