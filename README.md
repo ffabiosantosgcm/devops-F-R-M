@@ -10,7 +10,7 @@
 
 Links para o ambiente do [Sonar Cloud](https://sonarcloud.io/project/configuration?id=ffabiosantosgcm_devops-F-R-M)
 
-### Requisitos - Parte I
+### Requisitos
 
 ```
 
