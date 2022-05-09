@@ -10,10 +10,9 @@
 
 Links para o ambiente do [Sonar Cloud](https://sonarcloud.io/project/configuration?id=ffabiosantosgcm_devops-F-R-M)
 
-### Comandos para desenvolvimento
+### Requisitos - Parte I
 
 ```
-WRequisitos - Parte I
 
 1. Devem ser implementados pelo menos os seguintes jobs: build e deploy. 
 
